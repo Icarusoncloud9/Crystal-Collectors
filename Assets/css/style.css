@@ -1,0 +1,46 @@
+* {
+	font-family: 'Cabin Sketch', cursive;
+}
+body {
+	background-image: url("http://s8.favim.com/orig/150707/art-background-colorful-diamond-Favim.com-2918759.jpg");
+}
+.navbar-header .navbar-title .navbar-brand {
+	vertical-align: middle;
+}
+h1 {
+	text-align: center;
+	font-size: 72px;
+}
+.panel-body {
+	font-size: 30px;
+}
+#buttonHolder {
+	text-align: center;
+}
+.fa-diamond {
+	padding: 0px;
+	border: none;
+	background: none;
+	margin: 10px 5% 10px 5%;
+}
+#play {
+	vertical-align: middle;
+	margin-bottom: 5px;
+}
+#stop{
+	vertical-align: middle;
+	margin-bottom: 5px;
+	float: right;
+}
+#red {
+	color: red;
+}
+#yellow{
+	color: yellow;
+}
+#blue {
+	color: blue;
+}
+#green {
+	color: green;
+}
