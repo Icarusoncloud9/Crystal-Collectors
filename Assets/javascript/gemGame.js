@@ -8,13 +8,15 @@ var green = $("#green");
 var blue = $("#blue");
 
 // Variables for counter displays
-var wins = $("#wins");
-var losses = $("#losses");
+var winDisplay = $("#wins");
+var lossDisplay = $("#losses");
+var userScoreDisplay = $("#userScore");
+var randomNumber = $("#randomNumber");
 
 // Variables of random number and of the user score
-var randomNumber = $("#randomNumber");
+var wins = 0;
+var losses = 0;
 var userScore = 0;
-var userScoreDisplay = $("#userScore");
 
 // Value parameters of randomNumber
 var minValueOfRandomNumber = 19;
@@ -25,7 +27,17 @@ var valueOfGem = [red, yellow, green, blue];
 
 // Providing the ability to listen to music
 var audioElement = document.createElement('audio');
-	        audioElement.setAttribute('src', 'Assets/audio/crystalCastles.mp3');
+	audioElement.setAttribute('src', 'Assets/audio/crystalCastles.mp3');
+
+var ping = document.createElement('audio');
+	ping.setAttribute('src', 'Assets/audio/ping.mp3');
+
+var lose = document.createElement('audio');
+	lose.setAttribute('src', 'Assets/audio/lose.wav');
+
+var win = document.createElement('audio');
+	win.setAttribute('src', 'Assets/audio/win.mp3');
+
 // Functions ---------------------------------------------------------------------------------------
 // Function to test if buttons work
 
@@ -56,7 +68,7 @@ $("#stop").on("click", function(){
 function getRandomNumber(a, b) {
 	randomNumber = Math.floor(Math.random()*(b - a) + a);
 	$("#randomNumber").html(randomNumber);
-	console.log(randomNumber);
+	// console.log("Line 59", randomNumber);
 }
 
 // Function to generate a value for each gem
@@ -68,33 +80,69 @@ function gemValue() {
 }
 // Function to display wins and loss counter
 function counterDisplay() {
-	$("#wins").html(wins);
-	$("#losses").html(losses);
-}
-function checkToWin() {
-
+	winDisplay.html(wins);
+	lossDisplay.html(losses);
+	userScoreDisplay.html(userScore);
 }
 
+function winOrLose() {
+	console.log(userScore, "Line 114");
+	console.log(randomNumber, "Line 115");
+	if (userScore === randomNumber) {
+		// alert("You won"); // Check
+		win.play();
+		wins++;
+		getRandomNumber(minValueOfRandomNumber, maxValueOfRandomNumber);
+		gemValue();
+		counterDisplay();
+		userScore = 0;
+		userScoreDisplay.html(userScore);
+	} 
+	if (userScore > randomNumber) {
+		// alert("You lose"); // Check
+		lose.play();
+		losses++;
+		getRandomNumber(minValueOfRandomNumber, maxValueOfRandomNumber);
+		gemValue();
+		counterDisplay();
+		userScore = 0;
+		userScoreDisplay.html(userScore);
+	} 
+}
+function check() {
+	red.on("click", function() {
+			ping.play();
+			userScore = userScore + valueOfGem[0]; // This is Red
+			userScoreDisplay.html(userScore);
+			winOrLose();
+			console.log(userScore); // Check	
+	}) 
+	yellow.on("click", function() {
+			ping.play();
+			userScore = userScore + valueOfGem[1];
+			userScoreDisplay.html(userScore);
+			winOrLose();
+			console.log(userScore); // Check	
+	})
+	green.on("click", function() {
+			ping.play();
+			userScore = userScore + valueOfGem[2];
+			userScoreDisplay.html(userScore);
+			winOrLose();
+			console.log(userScore); // Check	
+	})
+	blue.on("click", function() {
+			ping.play();
+			userScore = userScore + valueOfGem[3];
+			userScoreDisplay.html(userScore);
+			winOrLose();
+			console.log(userScore); // Check	
+	})
+}
 
 // Main Code goes here -----------------------------------------------------------------------------
 getRandomNumber(minValueOfRandomNumber, maxValueOfRandomNumber);
 gemValue();
 counterDisplay();
-red.on("click", function() {
-		userScore = userScore + valueOfGem[0];
-		console.log(userScore);
-}) 
-yellow.on("click", function() {
-		userScore = userScore + valueOfGem[1];
-		console.log(userScore);
-})
-green.on("click", function() {
-		userScore = userScore + valueOfGem[2];
-		console.log(userScore);
-})
-blue.on("click", function() {
-		userScore = userScore + valueOfGem[3];
-		console.log(userScore);
-
-})
+check();
 })
