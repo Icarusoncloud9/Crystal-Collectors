@@ -75,7 +75,7 @@ function getRandomNumber(a, b) {
 function gemValue() {
 	for(i=0;i<valueOfGem.length;i++) {
 		valueOfGem[i] = Math.floor(Math.random()*(12 - 1) + 1);
-		console.log(valueOfGem[i]);
+		console.log(valueOfGem[i]); // Testing
 	}
 }
 // Function to display wins and loss counter
@@ -96,7 +96,6 @@ function winOrLose() {
 		gemValue();
 		counterDisplay();
 		userScore = 0;
-		userScoreDisplay.html(userScore);
 	} 
 	if (userScore > randomNumber) {
 		// alert("You lose"); // Check
@@ -106,7 +105,6 @@ function winOrLose() {
 		gemValue();
 		counterDisplay();
 		userScore = 0;
-		userScoreDisplay.html(userScore);
 	} 
 }
 function check() {
