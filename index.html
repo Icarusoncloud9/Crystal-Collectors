@@ -25,32 +25,41 @@
 <!-- fluid container -->
 <div class="container-fluid">
 <!-- heading and navigation -->
-<header>
+<header class="row">
 	<nav class="navbar navbar-default navbar-top-fixed">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">My Website</a>
-				<a class="navbar-text" href="#">Source Code</a>
+				<a class="nav navbar navbar-brand navbar-left" href="#"><p class="navbar-text"> My Website</p></a>
+				<a class="nav navbar navbar-text navbar-left" href="#"><p class="navbar-text"> Source Code</p></a>
+
+				<ul class="nav navbar-nav" id="musicplayer">	
+					<li>
+						<a href="#" id="play"><p class="navbar-text"><i class="fa fa-play" aria-hidden="true"> Play Music</i></p></a>
+					</li>
+					<li>
+						<a href="#" id="stop"><p class="navbar-text"><i class="fa fa-stop" aria-hidden="true"> Stop</i></p></a>
+					</li>	
+				</ul>
+
 			</div>
 		</div>
 	</nav>
 </header>
 <!-- main body filled with divs -->
 <main>
-<div class="container-fluid">
-	<button type="button" class="btn btn-default col-sm-6" id="play"><i class="fa fa-play"aria-hidden="true"> Play Music</i></button>
-	<button type="button" class="btn btn-default col-sm-6" id="stop"><i class="fa fa-stop" aria-hidden="true"> Stop</i></button>
-</div>
-<div class="panel panel-info">
-	<div class="panel panel-heading">
-			Crystal Collectors	
+
+<div class="row">
+	<div class="panel panel-info">
+		<div class="panel panel-heading">
+			<h1>Crystal Collectors</h1>	
 		</div>
 		<div class="panel panel-body">		
 			<h2>Instructions</h2>
 
 				<p>At the start of the game, you will be given a random number. Located below the number, there are four crystals. Clicking on a crystal will add a specified amount of points to your total score.You will be able to win the game by matching your score, with the number found in the beginning of the game. The value of each crystal is hidden from you until you click on it.	Each time the game starts, the value of the crystal will change.</p>
-			</div>
 		</div>
+	</div>
+</div>
 		
 		<div class="well well-sm col-sm-6">
 			<h3>Wins: <div id="wins"></div></h3>
@@ -69,12 +78,15 @@
 				
 		</div>
 		<!-- below -->
-		<div class="col-sm-12 panel panel-default">
-			<div class="container-fluid" id="buttonHolder">
-				<button type="button" class="fa fa-diamond fa-5x" id="red"></button>
-				<button type="button" class="fa fa-diamond fa-5x" id="yellow"></button>
-				<button type="button" class="fa fa-diamond fa-5x" id="green"></button>
-				<button type="button" class="fa fa-diamond fa-5x" id="blue"></button>
+		<div class="row">
+			
+			<div class="col-sm-12 panel panel-default">
+				<div class="container-fluid" id="buttonHolder">
+					<button type="button" class="fa fa-diamond fa-5x" id="red"></button>
+					<button type="button" class="fa fa-diamond fa-5x" id="yellow"></button>
+					<button type="button" class="fa fa-diamond fa-5x" id="green"></button>
+					<button type="button" class="fa fa-diamond fa-5x" id="blue"></button>
+				</div>
 			</div>
 		</div>
 	</div>
