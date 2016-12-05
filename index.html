@@ -22,25 +22,16 @@
 </head>
 
 <body>
-<!-- fluid container -->
-<div class="container-fluid">
+
 <!-- heading and navigation -->
 <header class="row">
 	<nav class="navbar navbar-default navbar-top-fixed">
 		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="nav navbar navbar-brand navbar-left" href="#"><p class="navbar-text"> My Website</p></a>
-				<a class="nav navbar navbar-text navbar-left" href="#"><p class="navbar-text"> Source Code</p></a>
-
-				<ul class="nav navbar-nav" id="musicplayer">	
-					<li>
-						<a href="#" id="play"><p class="navbar-text"><i class="fa fa-play" aria-hidden="true"> Play Music</i></p></a>
-					</li>
-					<li>
-						<a href="#" id="stop"><p class="navbar-text"><i class="fa fa-stop" aria-hidden="true"> Stop</i></p></a>
-					</li>	
-				</ul>
-
+			<div class="navbar-header container">
+				
+					<a class="nav navbar navbar-brand navbar-left" href="https://joaquinmelara.com"><p class="navbar-text" style="font-size: 22px;"> Joaquinmelara.com</p></a>
+					<a class="nav navbar navbar-text navbar-left" href="https://github.com/Icarusoncloud9/Crystal-Collectors"><p class="navbar-text"> Github Repo</p></a>
+					
 			</div>
 		</div>
 	</nav>
@@ -49,7 +40,7 @@
 <main>
 
 <div class="row">
-	<div class="panel panel-info">
+	<div class="panel panel-info container">
 		<div class="panel panel-heading">
 			<h1>Crystal Collectors</h1>	
 		</div>
@@ -57,23 +48,30 @@
 			<h2>Instructions</h2>
 
 				<p>At the start of the game, you will be given a random number. Located below the number, there are four crystals. Clicking on a crystal will add a specified amount of points to your total score.You will be able to win the game by matching your score, with the number found in the beginning of the game. The value of each crystal is hidden from you until you click on it.	Each time the game starts, the value of the crystal will change.</p>
+
+				<div class="container">
+					<div class="nav navbar-nav" id="musicplayer">	
+						<a href="#" id="play"><p class="navbar-text"><i class="fa fa-play" aria-hidden="true"> Play Music</i></p></a>
+						<a href="#" id="stop"><p class="navbar-text"><i class="fa fa-stop" aria-hidden="true"> Stop</i></p></a>
+					</div>
+				</div>
 		</div>
 	</div>
 </div>
 		
-		<div class="well well-sm col-sm-6">
+		<div class="well well-sm col-sm-6 text-center">
 			<h3>Wins: <div id="wins"></div></h3>
 		</div>
-		<div class="well well-sm col-sm-6">
+		<div class="well well-sm col-sm-6 text-center">
 			<h3>Losses: <div id="losses"></div></h3>
 		</div>
 	<div>
 		<!-- above -->
-		<div class="well well-sm col-sm-6">
+		<div class="well well-sm col-sm-6 text-center">
 			<h3>Random Number: <div id="randomNumber"></div></h3>
 				
 		</div>
-		<div class="well well-sm col-sm-6">
+		<div class="well well-sm col-sm-6 text-center">
 			<h3>Your Score: <div id="userScore"></div></h3>
 				
 		</div>
@@ -97,7 +95,7 @@
 
 
 
-</div>
+
 <script src="Assets/javascript/gemGame.js" type="text/javascript"></script>
 <script src="https://use.fontawesome.com/7429d6c6a6.js"></script>
 </body>
